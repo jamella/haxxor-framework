@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 import os, sys
 from subprocess import call
-
+print("[Written By: Taylor Puckett]")
+print("[Totally open source       ]")
 def cloner():
   try:
     site2clone = raw_input("[site] => ")
