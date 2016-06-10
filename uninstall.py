@@ -1,22 +1,33 @@
 #!/usr/bin/env python
-import os, sys, getpass, commands
+import os, time, sys, getpass, commands
 from subprocess import call
-from termcolor import colored 
+from termcolor import colored
+
 # VARIABLES #
 user = getpass.getuser()
+uid = os.getuid()
+wd = commands.getoutput("pwd")
 ipath = ("/usr/haxxor")
+pathset = ("/usr/haxxor/modules ")
+pathset += ("/usr/haxxor/fuzzers ")
+pathset += ("/usr/haxxor/scanners ")
+pathset += ("/usr/haxxor/privesc")
 finished_haxxor = ("/usr/bin/haxxor")
-if(user == 'root'):
-	print colored("[*} Running as root", "yellow")
-else:
-	print colored("[!] Not running as root', "red")
-	sys.exit(0)
-if(os.path.exists(ipath)):
-	call("rm -r " + ipath, shell=True)
-else:
-	print colored("[!] Could not find %s" % ipath, "red")
-if(os.path.isfile(finished_et)):
-	call("rm " + finished_haxxor, shell=True)
-else:
-	print colored("[!] Could not find %s" % finished_haxxor, "red")
 
+if(os.path.exists(ipath)):
+	pass
+else:
+	print colored("[!] Could not find {}".format(ipath), "red")
+	sys.exit(0)
+if(os.path.isfile(finished_haxxor)):
+	pass
+else:
+	print colored("[!] Could not find {}".format(finished_haxxor), "red")
+	sys.exit(0)
+
+print colored("[!] CTRL+C and change if not not in haxxor-framework directory", "red")
+time.sleep(10)
+
+call("mv " + pathset + " " + wd, shell=True)
+call("rm -r " + ipath, shell=True)
+call("rm " + finished_haxxor, shell=True)
