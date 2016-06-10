@@ -55,6 +55,7 @@ def create_directories():
 create_directories()
 def remove_readmes():
 	try:
+		# SORRY FOR ALL THE SYSTEM CALLS LOL #
 		call("rm /usr/haxxor/fuzzers/windows/browser/.readme.txt", shell=True)
 		call("rm /usr/haxxor/fuzzers/windows/os/.readme.txt", shell=True)
 		call("rm /usr/haxxor/fuzzers/mac/browser/.readme.txt", shell=True)
@@ -63,12 +64,17 @@ def remove_readmes():
 		call("rm /usr/haxxor/fuzzers/linux/os/.readme.txt", shell=True)
 		call("rm /usr/haxxor/fuzzers/misc/browser/.readme.txt", shell=True)
 		call("rm /usr/haxxor/fuzzers/misc/os/.readme.txt", shell=True)
-		call("", shell=True)
-		call("", shell=True)
-		call("", shell=True)
-		call("", shell=True)
-		call("", shell=True)
-		call("", shell=True)
+		call("rm /usr/haxxor/modules/dns/.readme.txt", shell=True)
+		call("rm /usr/haxxor/modules/enumeration/.readme.txt", shell=True)
+		call("rm /usr/haxxor/modules/scanning/.readme.txt", shell=True)
+		call("rm /usr/haxxor/privesc/windows/.readme.txt", shell=True)
+		call("rm /usr/haxxor/privesc/linux/.readme.txt", shell=True)
+		call("rm /usr/haxxor/privesc/mac/.readme.txt", shell=True)
+		call("rm /usr/haxxor/privesc/misc/.readme.txt", shell=True)
+		call("rm /usr/haxxor/scanners/version/.readme.txt", shell=True)
+		call("rm /usr/haxxor/scanners/os/.readme.txt", shell=True)
+		call("rm /usr/haxxor/scanners/kernel/.readme.txt", shell=True)
+		call("rm /usr/haxxor/scanners/software/.readme.txt", shell=True)
 		
 def haxxor_create():
 	try:
