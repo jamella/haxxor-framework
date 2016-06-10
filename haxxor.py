@@ -384,7 +384,7 @@ def main():
 						module5 = raw_input("[haxxor/modules/cloning] => ")
 						module_tuple5 = module5.partition(" ")
 						if(module_tuple5[0] == 'use'):
-							call("python " + module_tuple5[2], shell=True)
+							call("python /usr/haxxor/modules/cloning/" + module_tuple5[2], shell=True)
 						elif(module_tuple5[0] == 'back'):
 							print colored("[1] DNS\n[2] Enumeration\n[3] Scanning\n[4] Cloning\n[5] back", "blue")
 							break
