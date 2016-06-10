@@ -1,3 +1,0 @@
-Needed Dependencies for usbcreator
-PyUSB
-libusb
