@@ -22,7 +22,8 @@ list_fuzzers = int(fuzzer1 + fuzzer2 + fuzzer3 + fuzzer4 + fuzzer5 + fuzzer6 + f
 module1 = int(commands.getoutput("ls -1 /usr/haxxor/modules/scanning |wc -l"))
 module2 = int(commands.getoutput("ls -1 /usr/haxxor/modules/dns |wc -l"))
 module3 = int(commands.getoutput("ls -1 /usr/haxxor/modules/enumeration |wc -l"))
-list_modules = int(module1 + module2 + module3)
+module4 = int(commands.getoutput("ls -1 /usr/haxxor/modules/cloning |wc -l"))
+list_modules = int(module1 + module2 + module3 + module4)
 scanner1 = int(commands.getoutput("ls -1 /usr/haxxor/scanners/version |wc -l"))
 scanner2 = int(commands.getoutput("ls -1 /usr/haxxor/scanners/os |wc -l"))
 scanner3 = int(commands.getoutput("ls -1 /usr/haxxor/scanners/kernel |wc -l"))
@@ -311,7 +312,7 @@ def main():
 		print colored("[!] Error", "red")
 	def modules():
 		try:
-			print colored("[1] DNS\n[2] Enumeration\n[3] Scanning\n[4] back", "blue")
+			print colored("[1] DNS\n[2] Enumeration\n[3] Scanning\n[4] Cloning\n[5] back", "blue")
 			while True:
 				usemodule1 = raw_input("[haxxor/modules] => ")
 				if(usemodule1 == '1'):
@@ -322,7 +323,7 @@ def main():
 						if(module_tuple1[0] == 'use'):
 							call("python /usr/haxxor/modules/dns/" + module_tuple1[2], shell=True)
 						elif(module_tuple1[0] == 'back'):
-							print colored("[1] DNS\n[2] Enumeration\n[3] Scanning\n[4] back", "blue")
+							print colored("[1] DNS\n[2] Enumeration\n[3] Scanning\n[4] Cloning\n[5] back", "blue")
 							break
 						elif(module_tuple1[0] == 'exit'):
 							sys.exit(0)
@@ -343,7 +344,7 @@ def main():
 						if(module_tuple2[0] == 'use'):
 							call("python /usr/haxxor/modules/enumeration/" + module_tuple2[2], shell=True)
 						elif(module_tuple2[0] == 'back'):
-							print colored("[1] DNS\n[2] Enumeration\n[3] Scanning\n[4] back")
+							print colored("[1] DNS\n[2] Enumeration\n[3] Scanning\n[4] Cloning\n[5] back")
 							break
 						elif(module_tuple2[0] == 'exit'):
 							sys.exit(0)
@@ -364,7 +365,7 @@ def main():
 						if(module_tuple3[0] == 'use'):
 							call("python /usr/haxxor/modules/scanning/" + module_tuple3[2], shell=True)
 						elif(module_tuple3[0] == 'back'):
-							print colored("[1] DNS\n[2] Enumeration\n[3] Scanning\n[4] back", "blue")
+							print colored("[1] DNS\n[2] Enumeration\n[3] Scanning\n[4] Cloning\n[5] back", "blue")
 							break
 						elif(module_tuple3[0] == 'exit'):
 							sys.exit(0)
@@ -381,6 +382,27 @@ def main():
 					call("clear", shell=True)
 					banner()
 					break
+				elif(usemodule1 == '5'):
+					call("ls -1 /usr/haxxor/modules/cloning", shell=True)
+					while True:
+						module5 = raw_input("[haxxor/modules/cloning] => ")
+						module_tuple5 = module5.partition(" ")
+						if(module_tuple5[0] == 'use'):
+							call("python " + module_tuple5[2], shell=True)
+						elif(module_tuple5[0] == 'back'):
+							print colored("[1] DNS\n[2] Enumeration\n[3] Scanning\n[4] Cloning\n[5] back", "blue")
+							break
+						elif(module_tuple5[0] == 'exit'):
+							sys.exit(0)
+						elif(module_tuple5[0] == 'help'):
+							print colored("[=================================================]", "yellow")
+                                                        print colored("[help: this menu                                  ]", "yellow")
+                                                        print colored("[back: go back to previous menu                   ]", "yellow")
+                                                        print colored("[exit: exit haxxor-framework                      ]", "yellow")
+                                                        print colored("[use: use script                                  ]", "yellow")
+                                                        print colored("[=================================================]", "yellow")
+                                                else:
+                                                	print colored("[!] Unknown command", "red")
 				else:
 					print colored("[!] Unknown option", "red")
 		except KeyboardInterrupt:
