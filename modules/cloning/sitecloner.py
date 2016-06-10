@@ -1,8 +1,13 @@
 #!/usr/bin/env python
 import os, sys
 from subprocess import call
-print("[Written By: Taylor Puckett]")
-print("[Totally open source       ]")
+from termcolor import colored
+print colored("[=====================================]", "blue")
+print colored("[         SITE CLONER V.01            ]", "blue")
+print colored("[Written by: Taylor Puckett           ]", "blue")
+print colored("[June 10, 2016                        ]", "blue")
+print colored("[Open Source                          ]', "blue")
+print colored("[=====================================]", "blue')
 def cloner():
   try:
     site2clone = raw_input("[site] => ")
