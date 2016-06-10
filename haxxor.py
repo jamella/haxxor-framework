@@ -103,6 +103,13 @@ def main():
 										break
 									elif(mytuple1_1[0] == 'exit'):
 										sys.exit(0)
+									elif(mytuple1_1[0] == 'help'):
+										print colored("[=================================================]", "yellow")
+                                                        			print colored("[help: this menu                                  ]", "yellow")
+                                                        			print colored("[back: go back to previous menu                   ]", "yellow")
+                                                        			print colored("[exit: exit haxxor-framework                      ]", "yellow")
+                                                        			print colored("[use: use script                                  ]", "yellow")
+                                                        			print colored("[=================================================]", "yellow")
 									else:
 										print colored("[!] Unknown option", "red")
 							elif(usefuzzer1 == '2'):
@@ -119,6 +126,13 @@ def main():
 										print colored("[2] OS", "blue")
 										print colored("[3] back", "blue")
 										break
+									elif(mytuple1_2[0] == 'help'):
+										print colored("[=================================================]", "yellow")
+                                                                                print colored("[help: this menu                                  ]", "yellow")
+                                                                                print colored("[back: go back to previous menu                   ]", "yellow")
+                                                                                print colored("[exit: exit haxxor-framework                      ]", "yellow")
+                                                                                print colored("[use: use script                                  ]", "yellow")
+                                                                                print colored("[=================================================]", "yellow")
 									else:
 										print colored("[!] Unknown option", "red")	
 							elif(usefuzzer1 == '3'):
@@ -144,6 +158,13 @@ def main():
 										break
 									elif(mytuple2_1[0] == 'exit'):
 										sys.exit(0)
+									elif(mytuple2_1[0] == 'help'):
+										print colored("[=================================================]", "yellow")
+                                                                                print colored("[help: this menu                                  ]", "yellow")
+                                                                                print colored("[back: go back to previous menu                   ]", "yellow")
+                                                                                print colored("[exit: exit haxxor-framework                      ]", "yellow")
+                                                                                print colored("[use: use script                                  ]", "yellow")
+                                                                                print colored("[=================================================]", "yellow")
 									else:
 										print colored("[!] Unknown command")
 							elif(usefuzzer2_1 == '2'):
@@ -153,11 +174,18 @@ def main():
 									mytuple2_2 = usefuzzer2_1_2.partition(" ")
 									if(mytuple2_2[0] == 'use'):
 										call("python " + mytuple2_2[2], shell=True)
-									elif(mytuple[0] == 'back'):
+									elif(mytuple2_2[0] == 'back'):
 										print colored("[1] Browser\n[2] OS\n[3] back", "blue")
 										break
-									elif(mytuple[0] == 'exit'):
+									elif(mytuple2_2[0] == 'exit'):
 										sys.exit(0)
+									elif(mytuple2_2[0] == 'help'):
+										print colored("[=================================================]", "yellow")
+                                                                                print colored("[help: this menu                                  ]", "yellow")
+                                                                                print colored("[back: go back to previous menu                   ]", "yellow")
+                                                                                print colored("[exit: exit haxxor-framework                      ]", "yellow")
+                                                                                print colored("[use: use script                                  ]", "yellow")
+                                                                                print colored("[=================================================]", "yellow")
 									else:
 										print colored("[!] Unknown command", "red")
 							elif(usefuzzer2_1 == '3'):
@@ -183,6 +211,13 @@ def main():
 										break
 									elif(mytuple3_1[0] == 'exit'):
 										sys.exit(0)
+									elif(mytuple3_1[0] == 'help'):
+										print colored("[=================================================]", "yellow")
+                                                                                print colored("[help: this menu                                  ]", "yellow")
+                                                                                print colored("[back: go back to previous menu                   ]", "yellow")
+                                                                                print colored("[exit: exit haxxor-framework                      ]", "yellow")
+                                                                                print colored("[use: use script                                  ]", "yellow")
+                                                                                print colored("[=================================================]", "yellow")
 									else:
 										print colored("[!] Unknown command", "red")
 							elif(usefuzzer2_2 == '2'):
@@ -197,6 +232,13 @@ def main():
 										break
 									elif(mytuple3_2[0] == 'exit'):
 										sys.exit(0)
+									elif(mytuple3_2[0] == 'help'):
+										print colored("[=================================================]", "yellow")
+                                                                                print colored("[help: this menu                                  ]", "yellow")
+                                                                                print colored("[back: go back to previous menu                   ]", "yellow")
+                                                                                print colored("[exit: exit haxxor-framework                      ]", "yellow")
+                                                                                print colored("[use: use script                                  ]", "yellow")
+                                                                                print colored("[=================================================]", "yellow")
 									else:
 										print colored("[!] Unknown command", "red")
 							elif(usefuzzer2_2 == '3'):
@@ -222,6 +264,13 @@ def main():
 										break
 									elif(mytuple4_1[0] == 'exit'):
 										sys.exit(0)
+									elif(mytuple4_1[0] == 'help'):
+										print colored("[=================================================]", "yellow")
+                                                                                print colored("[help: this menu                                  ]", "yellow")
+                                                                                print colored("[back: go back to previous menu                   ]", "yellow")
+                                                                                print colored("[exit: exit haxxor-framework                      ]", "yellow")
+                                                                                print colored("[use: use script                                  ]", "yellow")
+                                                                                print colored("[=================================================]", "yellow")
 									else:
 										print colored("[!] Unknown option", "red")
 							elif(usefuzzer2_3 == '2'):
@@ -236,6 +285,13 @@ def main():
 										break
 									elif(mytuple4_2[0] == 'exit'):
 										sys.exit(0)
+									elif(mytuple4_2[0] == 'help'):
+										print colored("[=================================================]", "yellow")
+                                                                                print colored("[help: this menu                                  ]", "yellow")
+                                                                                print colored("[back: go back to previous menu                   ]", "yellow")
+                                                                                print colored("[exit: exit haxxor-framework                      ]", "yellow")
+                                                                                print colored("[use: use script                                  ]", "yellow")
+                                                                                print colored("[=================================================]", "yellow")
 									else:
 										print colored("[!] Unknown command", "red")
 							elif(usefuzzer2_3 == '3'):
@@ -270,6 +326,13 @@ def main():
 							break
 						elif(module_tuple1[0] == 'exit'):
 							sys.exit(0)
+						elif(module_tuple1[0] == 'help'):
+							print colored("[=================================================]", "yellow")
+                                                        print colored("[help: this menu                                  ]", "yellow")
+                                                        print colored("[back: go back to previous menu                   ]", "yellow")
+                                                        print colored("[exit: exit haxxor-framework                      ]", "yellow")
+                                                        print colored("[use: use script                                  ]", "yellow")
+                                                        print colored("[=================================================]", "yellow")
 						else:
 							print colored("[!] Unknown command", "red")
 				elif(usemodule1 == '2'):
@@ -284,6 +347,13 @@ def main():
 							break
 						elif(module_tuple2[0] == 'exit'):
 							sys.exit(0)
+						elif(module_tuple2[0] == 'help'):
+							print colored("[=================================================]", "yellow")
+                                                        print colored("[help: this menu                                  ]", "yellow")
+                                                        print colored("[back: go back to previous menu                   ]", "yellow")
+                                                        print colored("[exit: exit haxxor-framework                      ]", "yellow")
+                                                        print colored("[use: use script                                  ]", "yellow")
+                                                        print colored("[=================================================]", "yellow")
 						else:
 							print colored("[!] Unknown command", "red")
 				elif(usemodule1 == '3'):
@@ -298,6 +368,13 @@ def main():
 							break
 						elif(module_tuple3[0] == 'exit'):
 							sys.exit(0)
+						elif(module_tuple3[0] == 'help'):
+							print colored("[=================================================]", "yellow")
+                                                        print colored("[help: this menu                                  ]", "yellow")
+                                                        print colored("[back: go back to previous menu                   ]", "yellow")
+                                                        print colored("[exit: exit haxxor-framework                      ]", "yellow")
+                                                        print colored("[use: use script                                  ]", "yellow")
+                                                        print colored("[=================================================]", "yellow")
 						else:
 							print colored("[!] Unknown command", "red")
 				elif(usemodule1 == '4'):
@@ -325,6 +402,13 @@ def main():
 							break
 						elif(scanner_tuple1[0] == 'exit'):
 							sys.exit(0)
+						elif(scanner_tuple1[0] == 'help'):
+							print colored("[=================================================]", "yellow")
+                                                        print colored("[help: this menu                                  ]", "yellow")
+                                                        print colored("[back: go back to previous menu                   ]", "yellow")
+                                                        print colored("[exit: exit haxxor-framework                      ]", "yellow")
+                                                        print colored("[use: use script                                  ]", "yellow")
+                                                        print colored("[=================================================]", "yellow")
 						else:
 							print colored("[!] Unknown command", "red")
 				elif(usescanner1 == '2'):
@@ -339,6 +423,13 @@ def main():
 							break
 						elif(scanner_tuple2[0] == 'exit'):
 							sys.exit(0)
+						elif(scanner_tuple2[0] == 'help'):
+							print colored("[=================================================]", "yellow")
+                                                        print colored("[help: this menu                                  ]", "yellow")
+                                                        print colored("[back: go back to previous menu                   ]", "yellow")
+                                                        print colored("[exit: exit haxxor-framework                      ]", "yellow")
+                                                        print colored("[use: use script                                  ]", "yellow")
+                                                        print colored("[=================================================]", "yellow")
 						else:
 							print colored("[!] Unknown commnand", "red")
 				elif(usescanner1 == '3'):
@@ -353,6 +444,13 @@ def main():
 							break
 						elif(scanner_tuple3[0] == 'exit'):
 							sys.exit(0)
+						elif(scanner_tuple3[0] == 'help'):
+							print colored("[=================================================]", "yellow")
+                                                        print colored("[help: this menu                                  ]", "yellow")
+                                                        print colored("[back: go back to previous menu                   ]", "yellow")
+                                                        print colored("[exit: exit haxxor-framework                      ]", "yellow")
+                                                        print colored("[use: use script                                  ]", "yellow")
+                                                        print colored("[=================================================]", "yellow")
 						else:
 							print colored("[!] Unknown command", "red")
 				elif(usescanner1 == '4'):
@@ -367,6 +465,13 @@ def main():
 							break
 						elif(scanner_tuple4[0] == 'exit'):
 							sys.exit(0)
+						elif(scanner_tuple4[0] == 'help'):
+							print colored("[=================================================]", "yellow")
+                                                        print colored("[help: this menu                                  ]", "yellow")
+                                                        print colored("[back: go back to previous menu                   ]", "yellow")
+                                                        print colored("[exit: exit haxxor-framework                      ]", "yellow")
+                                                        print colored("[use: use script                                  ]", "yellow")
+                                                        print colored("[=================================================]", "yellow")
 						else:
 							print colored("[!] Unknown command", "red")
 				elif(usescanner1 == '5'):
@@ -466,7 +571,7 @@ def main():
                                                         print colored("[=================================================]", "yellow")
 						else:
 							print colored("[!] Unknown command", "red")
-				elif(privesc1 == '5'):
+				elif(useprivesc1 == '5'):
 					call("clear", shell=True)
 					banner()
 					break
