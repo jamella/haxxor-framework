@@ -75,7 +75,10 @@ def remove_readmes():
 		call("rm /usr/haxxor/scanners/os/.readme.txt", shell=True)
 		call("rm /usr/haxxor/scanners/kernel/.readme.txt", shell=True)
 		call("rm /usr/haxxor/scanners/software/.readme.txt", shell=True)
-		
+	except KeyboardInterrupt:
+		call("mv " + pathset + " " + wd, shell=True)
+		sys.exit(0)
+remove_readmes()
 def haxxor_create():
 	try:
 		call("cp haxxor.py haxxor && chmod +x haxxor && mv haxxor /usr/bin", shell=True)
