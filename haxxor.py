@@ -379,10 +379,6 @@ def main():
 						else:
 							print colored("[!] Unknown command", "red")
 				elif(usemodule1 == '4'):
-					call("clear", shell=True)
-					banner()
-					break
-				elif(usemodule1 == '5'):
 					call("ls -1 /usr/haxxor/modules/cloning", shell=True)
 					while True:
 						module5 = raw_input("[haxxor/modules/cloning] => ")
@@ -403,6 +399,10 @@ def main():
                                                         print colored("[=================================================]", "yellow")
                                                 else:
                                                 	print colored("[!] Unknown command", "red")
+                                elif(usemodule1 == '5'):
+					call("clear", shell=True)
+					banner()
+					break
 				else:
 					print colored("[!] Unknown option", "red")
 		except KeyboardInterrupt:
