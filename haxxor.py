@@ -1,13 +1,8 @@
 #!/usr/bin/env python
-import os
-import sys
-import getpass
-import commands
+import os, sys, getpass, commands
 from termcolor import colored
 from subprocess import call
-import rlcompleter
-import readline
-import atexit
+import rlcompleter, readline, atexit
 # VARIABLES #
 user = getpass.getuser()
 wd = commands.getoutput("pwd")
