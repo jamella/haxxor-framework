@@ -53,7 +53,23 @@ def create_directories():
 		else:
 			sys.exit(0)
 create_directories()
-
+def remove_readmes():
+	try:
+		call("rm /usr/haxxor/fuzzers/windows/browser/.readme.txt", shell=True)
+		call("rm /usr/haxxor/fuzzers/windows/os/.readme.txt", shell=True)
+		call("rm /usr/haxxor/fuzzers/mac/browser/.readme.txt", shell=True)
+		call("rm /usr/haxxor/fuzzers/mac/os/.readme.txt", shell=True)
+		call("rm /usr/haxxor/fuzzers/linux/browser/.readme.txt", shell=True)
+		call("rm /usr/haxxor/fuzzers/linux/os/.readme.txt", shell=True)
+		call("rm /usr/haxxor/fuzzers/misc/browser/.readme.txt", shell=True)
+		call("rm /usr/haxxor/fuzzers/misc/os/.readme.txt", shell=True)
+		call("", shell=True)
+		call("", shell=True)
+		call("", shell=True)
+		call("", shell=True)
+		call("", shell=True)
+		call("", shell=True)
+		
 def haxxor_create():
 	try:
 		call("cp haxxor.py haxxor && chmod +x haxxor && mv haxxor /usr/bin", shell=True)
