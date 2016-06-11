@@ -6,4 +6,4 @@ import time
 print("[!] I did NOT write venom")
 print("[!] Written by: www.sourceforge.com/u/peterubuntu10/profile")
 
-call("./usr/haxxor/post/linux/venom.sh", shell=True)
+call("./usr/haxxor/post/any/venom.sh", shell=True)
