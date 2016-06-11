@@ -1,0 +1,9 @@
+#!/usr/bin/env python
+from subprocess import call
+from termcolor import colored
+import time
+
+print("[!] I did NOT write venom")
+print("[!] Written by: www.sourceforge.com/u/peterubuntu10/profile")
+
+call("./usr/haxxor/post/linux/venom.sh", shell=True)
