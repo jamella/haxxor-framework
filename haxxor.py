@@ -313,7 +313,7 @@ def main():
 		print colored("[!] Error", "red")
 	def modules():
 		try:
-			print colored("[1] DNS\n[2] Enumeration\n[3] Scanning\n[4] Cloning\n[5] back", "blue")
+			print colored("[1] DNS\n[2] Enumeration\n[3] Scanning\n[4] Cloning\n[5] Wordlists [6] back", "blue")
 			while True:
 				usemodule1 = raw_input("[haxxor/modules] => ")
 				if(usemodule1 == '1'):
