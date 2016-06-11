@@ -1,4 +1,4 @@
- # DON'T USE 
+# don't use
  Working on haxxor.py and it will not work so don't clone (v.04)
 # haxxor-frramework
 Simple fuzzing and scanning tool with a few tricks up its' sleeve ;).
