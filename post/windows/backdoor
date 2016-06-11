@@ -8,4 +8,4 @@ print colored("[!] It was written by www.sourceforge.com/u/peterubuntu10/profile
 print colored("[!] Thanks peterubuntu10!", "red")
 time.sleep(3)
 
-call("./usr/haxxor/post/windows/venom.sh", shell=True)
+call("./usr/haxxor/post/any/venom.sh", shell=True)
