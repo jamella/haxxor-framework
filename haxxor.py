@@ -458,7 +458,7 @@ def main():
                                             			print colored("[=================================================]", "yellow")
                                         		else:
                                             			print colored("[!] Unknown command", "red")
-                                    		except KeyboardInterrupt or EOFError:
+                                    		except KeyboardInterrupt:
                                         		print colored("[!] Use 'back' to go back or 'exit' to exit", "red")
                             	elif(usepost1 == '2'):
                                 	call("ls -1 /usr/haxxor/post/mac", shell=True)
@@ -544,6 +544,7 @@ def main():
 								sys.exit(0)
 							elif(post5_tuple[0] == 'back'):
 								print colored("[1] Windows\n[2] Mac\n[3] Linux\n[4] Misc\n[5] Any\n[6] back", "blue")
+								break
 							elif(post5_tuple[0] == 'help'):
 								print colored("[=================================================]", "yellow")
                                                         	print colored("[help: this menu                                  ]", "yellow")
