@@ -347,7 +347,7 @@ def main():
 						if(module_tuple2[0] == 'use'):
 							call("python /usr/haxxor/modules/enumeration/" + module_tuple2[2], shell=True)
 						elif(module_tuple2[0] == 'back'):
-							print colored("[1] DNS\n[2] Enumeration\n[3] Scanning\n[4] Cloning\n[5] Wordlists\n[6] back")
+							print colored("[1] DNS\n[2] Enumeration\n[3] Scanning\n[4] Cloning\n[5] Wordlists\n[6] back", "blue")
 							break
 						elif(module_tuple2[0] == 'exit'):
 							sys.exit(0)
