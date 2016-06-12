@@ -6,4 +6,4 @@ while True:
   min_port = raw_input("[>] Minimum port: ")
   max_port = raw_input("[>] Maximum port: ")
   call("python /usr/haxxor/modules/scanning/.portscan " + host + " " + min_port + " " + max_port, shell=True)
-  
+# LOL
