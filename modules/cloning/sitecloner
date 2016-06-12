@@ -7,7 +7,7 @@ print colored("[         SITE CLONER V.01            ]", "blue")
 print colored("[Written by: Taylor Puckett           ]", "blue")
 print colored("[June 10, 2016                        ]", "blue")
 print colored("[Open Source                          ]", "blue")
-print colored("[=====================================]", "blue')
+print colored("[=====================================]", "blue")
 def cloner():
   try:
     site2clone = raw_input("[site] => ")
