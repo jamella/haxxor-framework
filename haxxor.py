@@ -489,7 +489,7 @@ def main():
                                 	while True:
                                			try:
                                 			post3 = raw_input("[haxxor/post/linux] => ")
-							post3_tuple3 = post3.partition(" ")
+							post3_tuple = post3.partition(" ")
 							if(post3_tuple[0] == 'use'):
 								call("python /usr/haxxor/post/linux/" + post3_tuple[2], shell=True)
 							elif(post3_tuple[0] == 'exit'):
