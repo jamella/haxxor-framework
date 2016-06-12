@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import os, sys, getpass, commands
+import os, sys, getpass, commands, time
 from termcolor import colored
 from subprocess import call
 import rlcompleter, readline, atexit
@@ -74,6 +74,7 @@ def banner():
 	print colored("[5] help", "blue")
 	print colored("[6] donate", "blue")
 	print colored("[7] exit", "blue")
+	print colored("[8] update", "blue")
 banner()
 
 def main():
@@ -682,7 +683,14 @@ def main():
 			elif(first_option == '6'):
 				pass
 			elif(first_option == '7'):
-				sys.exit(0)
+				sys.exit(0)\
+			elif(first_option == '8'):
+				print colored("[!] Make sure you are in haxxor directory...", "red")
+				time.sleep(4)
+				call("git pull", shell=True)
+				call("clear", shell=True)
+				banner()
+				break
 			else:
 				print colored("[!] Unknown option", "red")
 		except KeyboardInterrupt:
