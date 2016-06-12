@@ -64,7 +64,7 @@ def banner():
         print colored("| | | / ___ |) X ( ) X ( |_| | |    ", "blue")
         print colored("|_| |_\_____(_/ \_|_/ \_)___/|_|    ", "blue")
         print colored("------------------------------------", "blue")
-        print colored("[ WRITTEN BY: TAYLOR PUCKETT]   ", "blue")
+        print colored("[WRITTEN BY: TAYLOR PUCKETT]", "blue")
         print colored("[ [{}] fuzzers  [{}] modules ]".format(list_fuzzers, list_modules), "red")
         print colored("[ [{}] post     [{}] privesc ]".format(list_post, list_privesc), "red")
 	print colored("[1] fuzzers", "blue")
