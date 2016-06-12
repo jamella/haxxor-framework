@@ -36,5 +36,5 @@ for port in range(min_port, max_port):
     pass
 stop_time = datetime.now()
 total_time_duration = stop_time - start_time
-print("[*] Scanning finished at %s ..." % (time.strftime(%H:%M:%S")))
+print("[*] Scanning finished at %s ..." % (time.strftime("%H:%M:%S")))
 print("[*] Scanning duration: %s ..." % (total_time_duration))
