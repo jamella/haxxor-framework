@@ -25,11 +25,12 @@ module3 = int(commands.getoutput("ls -1 /usr/haxxor/modules/enumeration |wc -l")
 module4 = int(commands.getoutput("ls -1 /usr/haxxor/modules/cloning |wc -l"))
 module5 = int(commands.getoutput("ls -1 /usr/haxxor/modules/wordlists |wc -l"))
 list_modules = int(module1 + module2 + module3 + module4 + module5)
-scanner1 = int(commands.getoutput("ls -1 /usr/haxxor/scanners/version |wc -l"))
-scanner2 = int(commands.getoutput("ls -1 /usr/haxxor/scanners/os |wc -l"))
-scanner3 = int(commands.getoutput("ls -1 /usr/haxxor/scanners/kernel |wc -l"))
-scanner4 = int(commands.getoutput("ls -1 /usr/haxxor/scanners/software |wc -l"))
-list_scanners = int(scanner1 + scanner2 + scanner3 + scanner4)
+post1 = int(commands.getoutput("ls -1 /usr/haxxor/post/windows | wc -l"))
+post2 = int(commands.getoutput("ls -1 /usr/haxxor/post/mac |wc -l"))
+post3 = int(commands.getoutput("ls -1 /usr/haxxor/post/linux |wc -l"))
+post4 = int(commands.getoutput("ls -1 /usr/haxxor/post/misc | wc -l"))
+post5 = int(commands.getoutput("ls -1 /usr/haxxor/post/any |wc -l"))
+list_post = int(post1 + post2 + post3 + post4 + post5)
 privescs1 = int(commands.getoutput("ls -1 /usr/haxxor/privesc/windows |wc -l"))
 privescs2 = int(commands.getoutput("ls -1 /usr/haxxor/privesc/mac |wc -l"))
 privescs3 = int(commands.getoutput("ls -1 /usr/haxxor/privesc/linux |wc -l"))
@@ -64,10 +65,10 @@ def banner():
         print colored("|_| |_\_____(_/ \_|_/ \_)___/|_|    ", "blue")
         print colored("------------------------------------", "blue")
         print colored("[ [{}] fuzzers  [{}] modules ]".format(list_fuzzers, list_modules), "red")
-        print colored("[ [{}] scanners [{}] privesc ]".format(list_scanners, list_privesc), "red")
+        print colored("[ [{}] post     [{}] privesc ]".format(list_post, list_privesc), "red")
 	print colored("[1] fuzzers", "blue")
 	print colored("[2] modules", "blue")
-	print colored("[3] scanners", "blue")
+	print colored("[3] post", "blue")
 	print colored("[4] privesc", "blue")
 	print colored("[5] help", "blue")
 	print colored("[6] donate", "blue")
@@ -429,200 +430,235 @@ def main():
 					print colored("[!] Unknown option", "red")
 		except KeyboardInterrupt:
 			print colored("[!] Option #4 to go back", "red")
-	def scanners():
-		try:
-			print colored("[1] Version\n[2] OS\n[3] Kernel\n[4] Software\n[5] back", "blue")
-			while True:
-				usescanner1 = raw_input("[haxxor/scanners] => ")
-				if(usescanner1 == '1'):
-					call("ls -1 /usr/haxxor/scanners/version", shell=True)
+	def post_exploitation():
+                try:
+                        print colored("[1] Windows\n[2] Mac\n[3] Linux\n[4] Misc\n[5] Any\n[6] back", "blue")
+                        while True:
+                            	usepost1 = raw_input("[haxxor/post] => ")
+                           	if(usepost1 == '1'):
+                                	call("ls -1 /usr/haxxor/post/windows", shell=True)
+                                	while True:
+                                		try:
+                                        		post1 = raw_input("[haxxor/post/windows] => ")
+                                        		post1_tuple = post1.partition(" ")
+                                        		if(post1_tuple[0] == 'use'):
+                                            			call("python /usr/haxxor/post/windows/" + post1_tuple[2], shell=True)
+                                        		elif(post1_tuple[0] == 'exit'):
+                                            			sys.exit(0)
+                                        		elif(post1_tuple[0] == 'back'):
+                                            			print colored("[1] Windows\n[2] Mac\n[3] Linux\n[4] Misc\n[5] Any\n[6] back", "blue")
+                                            			break
+                                        		elif(post1_tuple[0] == 'help'):
+                                            			print colored("[=================================================]", "yellow")
+                                            			print colored("[help: this menu                                  ]", "yellow")
+                                            			print colored("[back: go back to previous menu                   ]", "yellow")
+                                            			print colored("[exit: exit haxxor-framework                      ]", "yellow")
+                                            			print colored("[use: use script                                  ]", "yellow")
+                                            			print colored("[=================================================]", "yellow")
+                                        		else:
+                                            			print colored("[!] Unknown command", "red")
+                                    		except KeyboardInterrupt or EOFError:
+                                        		print colored("[!] Use 'back' to go back or 'exit' to exit", "red")
+                            	elif(usepost1 == '2'):
+                                	call("ls -1 /usr/haxxor/post/mac", shell=True)
+                                	while True:
+                                		try:
+                                    			post2 = raw_input("[haxxor/post/mac] => ")
+                                        		post2_tuple = post2.partition(" ")
+                                        		if(post2_tuple[0] == 'use'):
+                                            			call("python /usr/haxxor/post/mac/" + post2_tuple[2], shell=True)
+                                        		elif(post2_tuple[0] == 'exit'):
+                                            			sys.exit(0)
+                                        		elif(post2_tuple[0] == 'back'):
+                                            			print colored("[1] Windows\n[2] Mac\n[3] Linux\n[4] Misc\n[5] Any\n[6] back", "blue")
+                                            			break
+                                        		elif(post2_tuple[0] == 'help'):
+                                            			print colored("[=================================================]", "yellow")
+                                            			print colored("[help: this menu                                  ]", "yellow")
+                                            			print colored("[back: go back to previous menu                   ]", "yellow")
+                                            			print colored("[exit: exit haxxor-framework                      ]", "yellow")
+                                            			print colored("[use: use script                                  ]", "yellow")
+                                           			print colored("[=================================================]", "yellow")
+                                        		else:
+                                            			print colored("[!] Unknown command", "red")
+                                    		except KeyboardInterrupt:
+                                        		print colored("[!] Use 'back' to go back or 'exit' to exit", "red")
+                            	elif(usepost1 == '3'):
+                                	call("ls -1 /usr/haxxor/post/linux", shell=True)
+                                	while True:
+                               			try:
+                                			post3 = raw_input("[haxxor/post/linux] => ")
+							post3_tuple3 = post3.partition(" ")
+							if(post3_tuple[0] == 'use'):
+								call("python /usr/haxxor/post/linux/" + post3_tuple[2], shell=True)
+							elif(post3_tuple[0] == 'exit'):
+								sys.exit(0)
+							elif(post3_tuple[0] == 'back'):
+								print colored("[1] Windows\n[2] Mac\n[3] Linux\n[4] Misc\n[5] Any\n[6] Back", "blue")
+								break
+							elif(post3_tuple[0] == 'help'):
+								print colored("[=================================================]", "yellow")
+                                           			print colored("[help: this menu                                  ]", "yellow")
+                                            			print colored("[back: go back to previous menu                   ]", "yellow")
+                                            			print colored("[exit: exit haxxor-framework                      ]", "yellow")
+                                            			print colored("[use: use script                                  ]", "yellow")
+                                            			print colored("[=================================================]", "yellow")
+							else:
+								print colored("[!] Unknown command", "red")
+						except KeyboardInterrupt:
+							print colored("[!] Type 'back' to go back or 'exit' to exit", "red")
+				elif(usepost1 == '4'):
+					call("ls -1 /usr/haxxor/post/misc", shell=True)
 					while True:
-						scanner1 = raw_input("[haxxor/scanners/version] => ")
-						scanner_tuple1 = scanner1.partition(" ")
-						if(scanner_tuple1[0] == 'use' or scanner_tuple1[1] == 'use'):
-							call("python /usr/haxxor/scanners/version/" + scanner_tuple1[2], shell=True)	
-						elif(scanner_tuple1[0] == 'back'):
-							print colored("[1] Version\n[2] OS\n[3] Kernel\n[4] Software\n[5] back", "blue")
-							break
-						elif(scanner_tuple1[0] == 'exit'):
-							sys.exit(0)
-						elif(scanner_tuple1[0] == 'help'):
-							print colored("[=================================================]", "yellow")
-                                                        print colored("[help: this menu                                  ]", "yellow")
-                                                        print colored("[back: go back to previous menu                   ]", "yellow")
-                                                        print colored("[exit: exit haxxor-framework                      ]", "yellow")
-                                                        print colored("[use: use script                                  ]", "yellow")
-                                                        print colored("[=================================================]", "yellow")
-						else:
-							print colored("[!] Unknown command", "red")
-				elif(usescanner1 == '2'):
-					call("ls -1 /usr/haxxor/scanner/os", shell=True)
+						try:
+							post4 = raw_input("[haxxor/post/misc] => ")
+							post4_tuple = post4.partition(" ")
+							if(post4_tuple[0] == 'use'):
+								call("python /usr/haxxor/post/misc/" + post4_tuple[2], shell=True)
+							elif(post4_tuple[0] == 'exit'):
+								sys.exit(0)
+							elif(post4_tuple[0] == 'back'):
+								print colored("[1] Windows\n[2] Mac\n[3] Linux\n[4] Misc\n[5] Any\n[6] back", "blue")
+								break
+							elif(post4_tuple[0] == 'help'):
+								print colored("[=================================================]", "yellow")
+                                                        	print colored("[help: this menu                                  ]", "yellow")
+                                                        	print colored("[back: go back to previous menu                   ]", "yellow")
+                                                        	print colored("[exit: exit haxxor-framework                      ]", "yellow")
+                                                        	print colored("[use: use script                                  ]", "yellow")
+                                                        	print colored("[=================================================]", "yellow")
+							else:
+								print colored("[!] Unknown command", "red")
+						except KeyboardInterrupt:
+							print colored("[!] Type 'back' to go back or 'exit' to exit")
+				elif(usepost1 == '5'):
+					call("ls -1 /usr/haxxor/post/any", shell=True)
 					while True:
-						scanner2 = raw_input("[haxxor/scanners/os] => ")
-						scanner_tuple2 = scanner2.partition(" ")
-						if(scanner_tuple2[0] == 'use'):
-							call("python /usr/haxxor/scanners/os/" + scanner_tuple2[2], shell=True)
-						elif(scanner_tuple2[0] == 'back'):
-							print colored("[1] Version\n[2] OS\n[3] Kernel\n[4] Software\n[5] back", "blue")
-							break
-						elif(scanner_tuple2[0] == 'exit'):
-							sys.exit(0)
-						elif(scanner_tuple2[0] == 'help'):
-							print colored("[=================================================]", "yellow")
-                                                        print colored("[help: this menu                                  ]", "yellow")
-                                                        print colored("[back: go back to previous menu                   ]", "yellow")
-                                                        print colored("[exit: exit haxxor-framework                      ]", "yellow")
-                                                        print colored("[use: use script                                  ]", "yellow")
-                                                        print colored("[=================================================]", "yellow")
-						else:
-							print colored("[!] Unknown commnand", "red")
-				elif(usescanner1 == '3'):
-					call("ls -1 /usr/haxxor/scanners/kernel", shell=True)
-					while True:
-						scanner3 = raw_input("[haxxor/scanners/kernel] => ")
-						scanner_tuple3 = scanner3.partition(" ")
-						if(scanner_tuple3[0] == 'use'):
-							call("python /usr/haxxor/scanners/kernel/" + scanner_tuple3[2], shell=True)
-						elif(scanner_tuple3[0] == 'back'):
-							print colored("[1] Version\n[2] OS\n[3] Kernel\n[4] Software\n[5] back", "blue")
-							break
-						elif(scanner_tuple3[0] == 'exit'):
-							sys.exit(0)
-						elif(scanner_tuple3[0] == 'help'):
-							print colored("[=================================================]", "yellow")
-                                                        print colored("[help: this menu                                  ]", "yellow")
-                                                        print colored("[back: go back to previous menu                   ]", "yellow")
-                                                        print colored("[exit: exit haxxor-framework                      ]", "yellow")
-                                                        print colored("[use: use script                                  ]", "yellow")
-                                                        print colored("[=================================================]", "yellow")
-						else:
-							print colored("[!] Unknown command", "red")
-				elif(usescanner1 == '4'):
-					call("ls -1 /usr/haxxor/scanners/software", shell=True)
-					while True:
-						scanner4 = raw_input("[haxxor/scanners/spftware] => ")
-						scanner_tuple4 = scanner4.partition(" ")
-						if(scanner_tuple4[0] == 'use'):
-							call("python /usr/haxxor/scanners/software/" + scanner_tuple4[2], shell=True)
-						elif(scanner_tuple4[0] == 'back'):
-							print colored("[1] Version\n[2] OS\n[3] Kernel\n[4] Software\n[5] back", "blue")
-							break
-						elif(scanner_tuple4[0] == 'exit'):
-							sys.exit(0)
-						elif(scanner_tuple4[0] == 'help'):
-							print colored("[=================================================]", "yellow")
-                                                        print colored("[help: this menu                                  ]", "yellow")
-                                                        print colored("[back: go back to previous menu                   ]", "yellow")
-                                                        print colored("[exit: exit haxxor-framework                      ]", "yellow")
-                                                        print colored("[use: use script                                  ]", "yellow")
-                                                        print colored("[=================================================]", "yellow")
-						else:
-							print colored("[!] Unknown command", "red")
-				elif(usescanner1 == '5'):
-					call("clear", shell=True)
-					banner()
-					break
-				else:
-					print colored("[!] Unknown option", "red")
-
-		except KeyboardInterrupt:
-			print colored("[!] Option #5 to go back to menu", "red")
-	def privesc():
-		try:
-			print colored("[1] Windows\n[2] Mac\n[3] Linux\n[4] Misc\n[5] back", "blue")
-			while True:
-				useprivesc1 = raw_input("[haxxor/privesc] => ")
-				if(useprivesc1 == '1'):
-					call("ls -1 /usr/haxxor/privesc/windows", shell=True)
-					while True:
-						privesc1 = raw_input("[haxxor/privesc/windows] => ")
-						privesc_tuple1 = privesc1.partition(" ")
-						if(privesc_tuple1[0] == 'use'):
-							call("python /usr/haxxor/privesc/windows/" + privesc_tuple1, shell=True)
-						elif(privesc_tuple1[0] == 'back'):
-							print colored("[1] Windows\n[2] Mac\n[3] Linux\n[4] Misc\n[5] back", "blue")
-							break
-						elif(privesc_tuple1[0] == 'exit'):
-							sys.exit(0)
-						elif(privesc_tuple1[0] == 'help'):
-							print colored("[=================================================]", "yellow")
-							print colored("[help: this menu                                  ]", "yellow")
-							print colored("[back: go back to previous menu                   ]", "yellow")
-							print colored("[exit: exit haxxor-framework                      ]", "yellow")
-							print colored("[use: use script                                  ]", "yellow")
-							print colored("[=================================================]", "yellow")
-						else:
-							print colored("[!] Unknown command", "red")
-				elif(useprivesc1 == '2'):
-					call("ls -1 /usr/haxxor/privesc/mac", shell=True)
-					while True:
-						privesc2 = raw_input("[haxxor/privesc/mac] => ")
-						privesc_tuple2 = privesc2.partition(" ")
-						if(privesc_tuple2[0] == 'use'):
-							call("python /usr/haxxor/privesc/mac/" + privesc_tuple2[2], shell=True)
-						elif(privesc_tuple2[0] == 'back'):
-							print colored("[1] Windows\n[2] Mac\n[3] Linux\n[4] Misc\n[5] back", "blue")
-							break
-						elif(privesc_tuple2[0] == 'exit'):
-							sys.exit(0)
-						elif(privesc_tuple2[0] == 'help'):
-							print colored("[=================================================]", "yellow")
-                                                        print colored("[help: this menu                                  ]", "yellow")
-                                                        print colored("[back: go back to previous menu                   ]", "yellow")
-                                                        print colored("[exit: exit haxxor-framework                      ]", "yellow")
-                                                        print colored("[use: use script                                  ]", "yellow") 
-                                                        print colored("[=================================================]", "yellow")
-						else:
-							print colored("[!] Unknown command", "red")
-				elif(useprivesc1 == '3'):
-					call("ls -1 /usr/haxxor/privesc/linux", shell=True)
-					while True:
-						privesc3 = raw_input("[haxxor/privesc/linux] => ")
-						privesc_tuple3 = privesc3.partition(" ")
-						if(privesc_tuple3[0] == 'use'):
-							call("python /usr/haxxor/privesc/linux/" + privesc_tuple3[0], shell=True)
-						elif(privesc_tuple3[0] == 'back'):
-							print colored("[1] Windows\n[2] Mac\n[3] Linux\n[4] Misc\n[5] Misc", "blue")
-						elif(privesc_tuple3[0] == 'exit'):
-							sys.exit(0)
-						elif(privesc_tuple3[0] == 'help'):
-							print colored("[=================================================]", "yellow")
-                                                        print colored("[help: this menu                                  ]", "yellow")
-                                                        print colored("[back: go back to previous menu                   ]", "yellow")
-                                                        print colored("[exit: exit haxxor-framework                      ]", "yellow")
-                                                        print colored("[use: use script                                  ]", "yellow") 
-                                                        print colored("[=================================================]", "yellow")
-						else:
-							print colored("[!] Unknown command", "red")
-				elif(useprivesc1 == '4'):
-					call("ls -1 /usr/haxxor/privesc/misc", shell=True)
-					while True:
-						privesc4 = raw_input("[haxxor/privesc/misc] => ")
-						privesc_tuple4 = privesc4.partition(" ")
-						if(privesc_tuple4[0] == 'use'):
-							call("python /usr/haxxor/privesc/misc/" + privesc_tuple4, shell=True)
-						elif(privesc_tuple4[0] == 'back'):
-							print colored("[1] Windows\n[2] Mac\n[3] Linux\n[4] Misc\n[5] back", "blue")
-							break
-						elif(privesc_tuple4[0] == 'exit'):
-							sys.exit(0)
-						elif(privesc_tuple4[0] == 'help'):
-							print colored("[=================================================]", "yellow")
-                                                        print colored("[help: this menu                                  ]", "yellow")
-                                                        print colored("[back: go back to previous menu                   ]", "yellow")
-                                                        print colored("[exit: exit haxxor-framework                      ]", "yellow")
-                                                        print colored("[use: use script                                  ]", "yellow") 
-                                                        print colored("[=================================================]", "yellow")
-						else:
-							print colored("[!] Unknown command", "red")
-				elif(useprivesc1 == '5'):
+						try:
+							post5 = raw_input("[haxxor/post/any] => ")
+							post5_tuple = post5.partition(" ")
+							if(post5_tuple[0] == 'use'):
+								call("python /usr/haxxor/post/any/" + post5_tuple[2], shell=True)
+							elif(post5_tuple[0] == 'exit'):
+								sys.exit(0)
+							elif(post5_tuple[0] == 'back'):
+								print colored("[1] Windows\n[2] Mac\n[3] Linux\n[4] Misc\n[5] Any\n[6] back", "blue")
+							elif(post5_tuple[0] == 'help'):
+								print colored("[=================================================]", "yellow")
+                                                        	print colored("[help: this menu                                  ]", "yellow")
+                                                        	print colored("[back: go back to previous menu                   ]", "yellow")
+                                                        	print colored("[exit: exit haxxor-framework                      ]", "yellow")
+                                                        	print colored("[use: use script                                  ]", "yellow")
+                                                       		print colored("[=================================================]", "yellow")
+							else:
+								print colored("[!] Unknown command", "red")
+						except KeyboardInterrupt:
+							print colored("[!] Type 'back' to go back or 'exit' to exit", "red")
+				elif(usepost1 == '6'):
 					call("clear", shell=True)
 					banner()
 					break
 				else:
 					print colored("[!] Unknown option", "red")
 		except KeyboardInterrupt:
-			print colored("[!] Option #5 to go back", "red")	 
+			print colored("[!] Option #6 to go back", "red")	
+					
+		def privesc():
+                	try:
+				print colored("[1] Windows\n[2] Mac\n[3] Linux\n[4] Misc\n[5] Any\n[6] back", "blue")
+				while True:
+					useprivesc1 = raw_input("[haxxor/privesc] => ")
+					if(useprivesc1 == '1'):
+						call("ls -1 /usr/haxxor/privesc/windows", shell=True)
+						while True:
+							privesc1 = raw_input("[haxxor/privesc/windows] => ")
+							privesc_tuple1 = privesc1.partition(" ")
+							if(privesc_tuple1[0] == 'use'):
+								call("python /usr/haxxor/privesc/windows/" + privesc_tuple1, shell=True)
+							elif(privesc_tuple1[0] == 'back'):
+								print colored("[1] Windows\n[2] Mac\n[3] Linux\n[4] Misc\n[5] Any\n[6] back", "blue")
+								break
+							elif(privesc_tuple1[0] == 'exit'):
+								sys.exit(0)
+							elif(privesc_tuple1[0] == 'help'):
+								print colored("[=================================================]", "yellow")
+								print colored("[help: this menu                                  ]", "yellow")
+								print colored("[back: go back to previous menu                   ]", "yellow")
+								print colored("[exit: exit haxxor-framework                      ]", "yellow")
+								print colored("[use: use script                                  ]", "yellow")
+								print colored("[=================================================]", "yellow")
+							else:
+								print colored("[!] Unknown command", "red")
+					elif(useprivesc1 == '2'):
+						call("ls -1 /usr/haxxor/privesc/mac", shell=True)
+						while True:
+							privesc2 = raw_input("[haxxor/privesc/mac] => ")
+							privesc_tuple2 = privesc2.partition(" ")
+							if(privesc_tuple2[0] == 'use'):
+								call("python /usr/haxxor/privesc/mac/" + privesc_tuple2[2], shell=True)
+							elif(privesc_tuple2[0] == 'back'):
+								print colored("[1] Windows\n[2] Mac\n[3] Linux\n[4] Misc\n[5] back", "blue")
+								break
+							elif(privesc_tuple2[0] == 'exit'):
+								sys.exit(0)
+							elif(privesc_tuple2[0] == 'help'):
+								print colored("[=================================================]", "yellow")
+                                                        	print colored("[help: this menu                                  ]", "yellow")
+                                                        	print colored("[back: go back to previous menu                   ]", "yellow")
+                                                        	print colored("[exit: exit haxxor-framework                      ]", "yellow")
+                                                        	print colored("[use: use script                                  ]", "yellow") 
+                                                        	print colored("[=================================================]", "yellow")
+							else:
+								print colored("[!] Unknown command", "red")
+					elif(useprivesc1 == '3'):
+						call("ls -1 /usr/haxxor/privesc/linux", shell=True)
+						while True:
+							privesc3 = raw_input("[haxxor/privesc/linux] => ")
+							privesc_tuple3 = privesc3.partition(" ")
+							if(privesc_tuple3[0] == 'use'):
+								call("python /usr/haxxor/privesc/linux/" + privesc_tuple3[0], shell=True)
+							elif(privesc_tuple3[0] == 'back'):
+								print colored("[1] Windows\n[2] Mac\n[3] Linux\n[4] Misc\n[5] Misc", "blue")
+							elif(privesc_tuple3[0] == 'exit'):
+								sys.exit(0)
+							elif(privesc_tuple3[0] == 'help'):
+								print colored("[=================================================]", "yellow")
+                                                        	print colored("[help: this menu                                  ]", "yellow")
+                                                       		print colored("[back: go back to previous menu                   ]", "yellow")
+                                                        	print colored("[exit: exit haxxor-framework                      ]", "yellow")
+                                                        	print colored("[use: use script                                  ]", "yellow") 
+                                                        	print colored("[=================================================]", "yellow")
+							else:
+								print colored("[!] Unknown command", "red")
+					elif(useprivesc1 == '4'):
+						call("ls -1 /usr/haxxor/privesc/misc", shell=True)
+						while True:
+							privesc4 = raw_input("[haxxor/privesc/misc] => ")
+							privesc_tuple4 = privesc4.partition(" ")
+							if(privesc_tuple4[0] == 'use'):
+								call("python /usr/haxxor/privesc/misc/" + privesc_tuple4, shell=True)
+							elif(privesc_tuple4[0] == 'back'):
+								print colored("[1] Windows\n[2] Mac\n[3] Linux\n[4] Misc\n[5] back", "blue")
+								break
+							elif(privesc_tuple4[0] == 'exit'):
+								sys.exit(0)
+							elif(privesc_tuple4[0] == 'help'):
+								print colored("[=================================================]", "yellow")
+                                                        	print colored("[help: this menu                                  ]", "yellow")
+                                                        	print colored("[back: go back to previous menu                   ]", "yellow")
+                                                        	print colored("[exit: exit haxxor-framework                      ]", "yellow")
+                                                        	print colored("[use: use script                                  ]", "yellow") 
+                                                        	print colored("[=================================================]", "yellow")
+							else:
+								print colored("[!] Unknown command", "red")
+					elif(useprivesc1 == '5'):
+						call("clear", shell=True)
+						banner()
+						break
+					else:
+						print colored("[!] Unknown option", "red")
+			except KeyboardInterrupt:
+				print colored("[!] Option #5 to go back", "red")	 
 	def mainmenu():
 		try:
 			first_option = raw_input("[haxxor] => ")
@@ -631,7 +667,7 @@ def main():
 			elif(first_option == '2'):	
 				modules()
 			elif(first_option == '3'):
-				scanners()
+				post_exploitation()
 			elif(first_option == '4'):
 				privesc()
 			elif(first_option == '5'):
