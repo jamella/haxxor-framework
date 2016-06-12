@@ -10,20 +10,20 @@ wd = commands.getoutput("pwd")
 ipath = ("/usr/haxxor")
 pathset = ("/usr/haxxor/modules ")
 pathset += ("/usr/haxxor/fuzzers ")
-pathset += ("/usr/haxxor/scanners ")
+pathset += ("/usr/haxxor/post ")
 pathset += ("/usr/haxxor/privesc")
 finished_haxxor = ("/usr/bin/haxxor")
 
 if(os.path.exists(ipath)):
-	pass
+        pass
 else:
-	print colored("[!] Could not find {}".format(ipath), "red")
-	sys.exit(0)
+        print colored("[!] Could not find {}".format(ipath), "red")
+        sys.exit(0)
 if(os.path.isfile(finished_haxxor)):
-	pass
+        pass
 else:
-	print colored("[!] Could not find {}".format(finished_haxxor), "red")
-	sys.exit(0)
+        print colored("[!] Could not find {}".format(finished_haxxor), "red")
+        sys.exit(0)
 
 print colored("[!] CTRL+C and change if not not in haxxor-framework directory", "red")
 time.sleep(10)
