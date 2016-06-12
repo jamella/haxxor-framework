@@ -384,7 +384,7 @@ def main():
 					call("ls -1 /usr/haxxor/modules/cloning", shell=True)
 					while True:
 						module4 = raw_input("[haxxor/modules/cloning] => ")
-						module_tuple4 = module5.partition(" ")
+						module_tuple4 = module4.partition(" ")
 						if(module_tuple4[0] == 'use'):
 							call("python /usr/haxxor/modules/cloning/" + module_tuple5[2], shell=True)
 						elif(module_tuple4[0] == 'back'):
