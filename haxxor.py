@@ -320,8 +320,8 @@ def main():
 				if(usemodule1 == '1'):
 					call("ls -1 /usr/haxxor/modules/dns", shell=True)
 					while True:
-						usefuzzer1_1 = raw_input("[haxxor/modules/dns] => ")
-						module_tuple1 = usefuzzer1_1.partition(" ")
+						usemodule1_1 = raw_input("[haxxor/modules/dns] => ")
+						module_tuple1 = usemodule1_1.partition(" ")
 						if(module_tuple1[0] == 'use'):
 							call("python /usr/haxxor/modules/dns/" + module_tuple1[2], shell=True)
 						elif(module_tuple1[0] == 'back'):
