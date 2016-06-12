@@ -683,12 +683,7 @@ def main():
 			elif(first_option == '6'):
 				pass
 			elif(first_option == '7'):
-				sys.exit(0)\
-			elif(first_option == '8'):
-				print colored("[!] Make sure you are in haxxor directory...", "red")
-				time.sleep(4)
-				call("git pull", shell=True)
-				call("python uninstall.py && python setup.py", shell=True)
+				sys.exit(0)
 			else:
 				print colored("[!] Unknown option", "red")
 		except KeyboardInterrupt:
