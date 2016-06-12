@@ -688,9 +688,7 @@ def main():
 				print colored("[!] Make sure you are in haxxor directory...", "red")
 				time.sleep(4)
 				call("git pull", shell=True)
-				call("clear", shell=True)
-				banner()
-				break
+				call("python uninstall.py && python setup.py", shell=True)
 			else:
 				print colored("[!] Unknown option", "red")
 		except KeyboardInterrupt:
