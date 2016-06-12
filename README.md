@@ -13,11 +13,12 @@ Kali Linux (or any distro running out of box root)
 # How does it work
 It is a sorta based off of some things I immitated from multiple other tools (metasploit and veil)
 # Why should you use it?
-A special module will launched along with haxxor-framework called firefuzz. It is basically a fuzzer for Firefox on Mac/Windows/Linux
+idk. I thinks it's cool. Lol.
+ Mac/Windows/Linux
 # Windows Version?
 That will come later on with, hopefully, help from the community
 # Progress
-As of 7-10-16, haxxor-framework has had some major changes (v.04), but is still not done. Email modules that can be used to: pentestwizard@gmail.com (Python or a language that can be ported to python. Multi language support coming soon)
+As of 7-11-16, haxxor-framework has had some major changes (v.04), but is still not done. Email modules that can be used to: pentestwizard@gmail.com (Python or a language that can be ported to python. Multi language support coming soon)
 # Donations and other stuff
 this tool is free, but donations (not right now, for when we get a functioning tool) are helpful and they will most likely go towards hiring help to make the tool greater
 the tool is also open source so send those merge request in for dis boi here
