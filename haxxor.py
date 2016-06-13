@@ -1,4 +1,7 @@
 #!/usr/bin/env python
+# Written By Taylor Puckett
+# June 13, 2016
+# MIT License
 import os, sys, getpass, commands, time
 from termcolor import colored
 from subprocess import call
