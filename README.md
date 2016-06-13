@@ -5,27 +5,29 @@ Fuzzing, Scanning, Privilege Escalation, and Post-Exploitation framework. Writte
 First, make sure you are running as root (Mac/Linux)
 
 For Ubuntu it would be:
-
+  ```bash
   sudo python #downloadpath/setup.py
   
   sudo haxxor
-  
+  ```
   And if you want to uninstall:
+  ```bash
   sudo python uninstall.py
-  
+  ```
   This moves the directories back to the haxxor-framework directory for easy reinstallation.
   
 Mac (same as Ubuntu)
+
 Kali Linux (or any distro running out of box root)
   ```bash
   python #downloadpath/setup.py
-  ```
+  
   haxxor
-  
+  ```
   And if you want to uninstall
-  
+  ``` bash
   python uninstall.py
-  
+  ```
   This moves the directories back to the haxxor-framework directory for easy reinstallation.
 # How does it work
 It integrates some prewritten tools (credit is given) and some written by me (aka sitecloner)
