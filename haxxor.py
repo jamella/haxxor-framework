@@ -19,7 +19,7 @@ fuzzer6 = int(commands.getoutput("ls -1 /usr/haxxor/fuzzers/mac/os |wc -l"))
 fuzzer7 = int(commands.getoutput("ls -1 /usr/haxxor/fuzzers/misc/browser |wc -l"))
 fuzzer8 = int(commands.getoutput("ls -1 /usr/haxxor/fuzzers/misc/os |wc -l"))
 list_fuzzers = int(fuzzer1 + fuzzer2 + fuzzer3 + fuzzer4 + fuzzer5 + fuzzer6 + fuzzer7 + fuzzer8)
-module1 = int(commands.getoutput("ls -1 /usr/haxxor/modules/scanning |wc -l"))
+module1 = int(commands.getoutput("ls -1 /usr/haxxor/modules/scanning |wc -l | grep -v .portscan"))
 module2 = int(commands.getoutput("ls -1 /usr/haxxor/modules/dns |wc -l"))
 module3 = int(commands.getoutput("ls -1 /usr/haxxor/modules/enumeration |wc -l"))
 module4 = int(commands.getoutput("ls -1 /usr/haxxor/modules/cloning |wc -l"))
@@ -362,7 +362,7 @@ def main():
 						else:
 							print colored("[!] Unknown command", "red")
 				elif(usemodule1 == '3'):
-					call("ls -1 /usr/haxxor/modules/scanning", shell=True)
+					call("ls -1 /usr/haxxor/modules/scanning |grep -v .portscan", shell=True)
 					while True:
 						usemodule1_3 = raw_input("[haxxor/modules/scanning] => ")
 						module_tuple3 = usemodule1_3.partition(" ")
