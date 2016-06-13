@@ -17,9 +17,9 @@ For Ubuntu it would be:
   
 Mac (same as Ubuntu)
 Kali Linux (or any distro running out of box root)
-
+  ```bash
   python #downloadpath/setup.py
-  
+  ```
   haxxor
   
   And if you want to uninstall
@@ -39,7 +39,9 @@ As of 7-13-16, haxxor-framework has had some major changes (v.04), but is still 
 They are welcome, but DEFINITELY not required.
 # Version 1? 
 haxxor-framework v.1 is in the works and will be awwwweeesssoommeee *wink wink*
-'''python
+
+```python
 while True:
   print("[*] Hack the planet!")
-'''
+```
+
