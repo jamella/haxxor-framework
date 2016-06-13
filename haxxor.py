@@ -362,7 +362,7 @@ def main():
 						else:
 							print colored("[!] Unknown command", "red")
 				elif(usemodule1 == '3'):
-					call("ls -1 /usr/haxxor/modules/scanning |grep -v .portscan", shell=True)
+					call("ls -1 /usr/haxxor/modules/scanning |grep -v '.portscan'", shell=True)
 					while True:
 						usemodule1_3 = raw_input("[haxxor/modules/scanning] => ")
 						module_tuple3 = usemodule1_3.partition(" ")
