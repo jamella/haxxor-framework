@@ -4,7 +4,7 @@ Fuzzing, Scanning, Privilege Escalation, and Post-Exploitation framework. Writte
 ## How to use haxxor-framework
 First, make sure you are running as root (Mac/Linux)
 For Ubuntu it would be:
-  sudo python #downloadpath/setup.py
+  *sudo python #downloadpath/setup.py*
   sudo haxxor
   and if you want to uninstall
   sudo python uninstall.py
