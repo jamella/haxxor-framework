@@ -29,6 +29,7 @@ Kali Linux (or any distro running out of box root)
   python uninstall.py
   ```
   This moves the directories back to the haxxor-framework directory for easy reinstallation.
+  
   Needed modules are automatically installed via setup.py
 # How does it work
 It integrates some prewritten tools (credit is given) and some written by me (aka sitecloner)
