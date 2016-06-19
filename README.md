@@ -1,8 +1,14 @@
 
-# haxxor-frramework
+# haxxor-framework
 Fuzzing, Scanning, Privilege Escalation, and Post-Exploitation framework. Written 100% in Python 2.7 for Linux/Mac OS
 ## How to use haxxor-framework
-First, make sure you are running as root (Mac/Linux)
+First, install needed requirements by running:
+  ```bash
+  pip install -r REQUIREMENTS
+  ```
+  If anymore modules are needed, post an issue so they can be added to the REQUIREMENTS file
+
+Second, make sure you are running as root (Mac/Linux)
 
 For Ubuntu it would be:
   ```bash
@@ -30,7 +36,6 @@ Kali Linux (or any distro running out of box root)
   ```
   This moves the directories back to the haxxor-framework directory for easy reinstallation.
   
-  Needed modules are automatically installed via setup.py
 # How does it work
 It integrates some prewritten tools (credit is given) and some written by me (aka sitecloner)
 # Why should you use it?
