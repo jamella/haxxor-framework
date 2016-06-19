@@ -2,13 +2,13 @@
 # haxxor-framework
 Fuzzing, Scanning, Privilege Escalation, and Post-Exploitation framework. Written 100% in Python 2.7 for Linux/Mac OS
 ## How to use haxxor-framework
-First, install needed requirements by running:
+##First, install needed requirements by running:
   ```bash
   pip install -r REQUIREMENTS
   ```
   If anymore modules are needed, post an issue so they can be added to the REQUIREMENTS file
 
-Second, make sure you are running as root (Mac/Linux)
+##Second, make sure you are running as root (Mac/Linux)
 
 For Ubuntu it would be:
   ```bash
@@ -43,9 +43,7 @@ idk. I thinks it's cool. Lol.
 # Windows Version?
 JeEz, pushy much? *wheezes*  Later...
 # Progress
-As of 7-13-16, haxxor-framework has had some major changes (v.04), but is still not done. Email modules that can be used to: pentestwizard@gmail.com (Python or a language that can be ported to python. Multi language support coming soon)
-# Donations and other stuff
-They are welcome, but DEFINITELY not required.
+As of 7-19-16, haxxor-framework has had some major changes (v.04), but is still not done. Email modules that can be used to: pentestwizard@gmail.com (Python or a language that can be ported to python. Multi language support coming soon)
 # Version 1? 
 haxxor-framework v.1 is in the works and will be awwwweeesssoommeee *wink wink*
 
