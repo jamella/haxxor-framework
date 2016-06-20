@@ -1,10 +1,7 @@
 #!/usr/bin/env python
 import os, sys, getpass, time, commands
 from subprocess import call
-try:
-	from termcolor import colored
-except ImportError:
-	call("pip install termcolor", shell=True)
+from termcolor import colored
 # VARIABLE #
 user = getpass.getuser()
 uid = os.getuid()
