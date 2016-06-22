@@ -1,50 +1,53 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 import sys, os, time
 from subprocess import call
-
-print "----------------------------------------------------------------"
-print " [+] NMap Automatic Network/Host Scanner [+]"
-print " By: Alan Cao"
-print "----------------------------------------------------------------"
-
-print "Options:"
-print "1)Simple Scan\n2)Intense Scan\n3)IPv6 Scan\n4)Ping Scan\n5)Fast Scan\n6)UDP Scan"
-print "7)Port Selection\n8)Port Scan (TCP SYN)\n9)OS Detection Scan"
-print "10)Standard Service Detection\n11)Heartbleed SSL Vulnerability Scan\n12)IP Info"
-print "13)Help\n14)Go Back"
+from termcolor import colored
+import rlcompleter, readline, atexit
+print colored("[ NMAP MODULE v.01 ]", "red")
+print colored("[By: Taylor Puckett]", "red")
 def main():
-	option = input("[>] Choose An Option, Young Padawan: ")
-	target = raw_input(" [>] Enter Target IP/Hostname for Scanning: (none if you exiting)")
-
-	if option == 1:
-		call(["nmap", "-v", target])
-	elif option == 2:
-		call(["nmap", "-T4", "-A", target])
-	elif option == 3:
-		call(["nmap", "-6", target])
-	elif option == 4:
-		call(["nmap", "-sP", target])
-	elif option == 5:
-		call(["nmap", "-F", target])
-	elif option == 6:
-		call(["nmap", "-sU", target])
-	elif option == 7:
-		call(["nmap", "-p", target])
-	elif option == 8:
-		call(["nmap", "-sS", target])
-	elif option == 9:
-		call(["nmap", "-A", target])
-	elif option == 10:
-		call(["nmap", "-sV", target])
-	elif option == 11:
-		call(["nmap", "-sV", "-p 443", "--script=ssl-heartbleed", target])
-	elif option == 12:
-		call(["nmap", "--script=asn-query", "whois", "ip-geolocation-maxmind", target])
-	elif option == 13:
-		call(["gedit", "help.txt"])
-	elif option == 14:
-		call(["python","menu.py"])
-	else:
-		print("[!] Unknown option")
+	try:
+		print colored("Scan types {nmap}: ", "blue")
+		print("[1] Simple Scan\n[2] Intense Scan\n[3] IPv6 Scan\n[4] Ping Scan\n[5] Fast Scan\n[6] UDP Scan")
+		print("[7] Port Selection\n[8] Port Scan\n[9] OS Detection")
+		print("[10] Service Detection\n[11] Heartbleed SSL Vulnerability\n[12] IP Info")
+		print("[13] Help\n[14] Exit")
+		option = raw_input("[nmap] => ")
+		print colored("[!] If option 7: (IP) (ports (22-25)) or (IP) (port(22))", "red") 
+		target = raw_input("[target IP [<enter> if help menu or exit]] => ")
+		if(option == '1'):
+			call("nmap -v " + target, shell=True)
+		elif(option == '2'):
+			call("nmap -T4 -A " + target, shell=True)
+		elif(option == '3'):
+			call("nmap -6 " + target, shell=True)
+		elif(option == '4'):
+			call("nmap -sP " + target, shell=True)
+		elif(option == '5'):
+			call("nmap -F " + target, shell=True)
+		elif(option == '6'):
+			call("nmap -sU " + target, shell=True)
+		elif(option == '7'):
+			tuple_choosen_port = target.partition(" ")
+			call("nmap " + target + " -p " + tuple_choosen_port[2], shell=True)
+		elif(option == '8'):
+			call("nmap -sS " + target, shell=True)
+		elif(option == '9'):
+			call("nmap -A " + target, shell=True)
+		elif(option == '10'):
+			call("nmap -sV " + target, shell=True)
+		elif(option == '11'):
+			call("nmap -sV -p 443 --script=ssl-heartbleed " + target, shell=True)
+		elif(option == '12'):
+			call("nmap --script=asn-query whois ip-geolocation-maxmind " + target, shell=True)
+		elif(option == '13'):
+			print colored("[Choose an option and target, then nmap does the rest", "yellow")
+		elif(option == '14'):
+			exit(0)
+		else:
+			print colored("[!] Unknown option", "red")
+	except KeyboardInterrupt:
+		print colored("[!] Exiting...")
+		exit(0)
 while True:
 	main()
