@@ -1,4 +1,5 @@
-
+# don't use it's buggy again 
+More bugs and you will run into issues, I'm working on a fix
 # haxxor-framework
 Fuzzing, Scanning, Privilege Escalation, and Post-Exploitation framework. Written 100% in Python 2.7 for Linux/Mac OS
 ## How to use haxxor-framework
