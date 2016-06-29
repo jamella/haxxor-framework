@@ -108,7 +108,7 @@ Then:
 git clone https://www.github.com/R3C0Nx00/haxxor-framework.git
 ```
 
- ** For Kali Linux (or any rooted *NIX machine)
+  * For Kali Linux (or any rooted *NIX machine)
 ```bash
 cd downloadpath/haxxor-framework && python uninstall.py && cd .. && rm -r haxxor-framework
 ```
