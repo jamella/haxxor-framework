@@ -1,5 +1,17 @@
 # Haxxor-framework
 haxxor-framework is a fuzzing and privilege escalation framework with various modules. post exploitation will be handled by p0stEX (my new project [https://www.github.com/R3C0Nx00/p0stEX]) The post exploitation part will be removed from this project. The two projects work together, but they also work as standalone tools. Both are written in Python. They *DO NOT* depend on each other.
+# Version 1.1 announcement
+Version 1.1 of haxxor-framework is coming along nicely (I'm adding Mac support back and adding some cool stuff). The things I will be adding:
+* Mac OSX support
+ * it was removed because of El Capitan errors with the setup and placement of the haxxor directory
+* Removing fuzzers
+ * As the developer, I've decided to clear the vision for this tool and I decided to remove fuzzers and add in exploits.
+* New modules
+ * USB modules
+ * More scanning modules
+ * and a couple of surprises ;)
+ 
+For now, those are the only things I am adding. Thank you for starring the project. 
 # Mac OSX unsupported
 At the moment, Mac OSX is unsupported due to setup script failures. This problem will be fixed by the end of the week, but I need time to work on it. Sorry Mac users, it will be fixed I promise.
 # How to use haxxor-framework
